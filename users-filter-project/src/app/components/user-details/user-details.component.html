@@ -5,31 +5,31 @@
     </mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item>
-      <span class="mat-h2">Nome: </span><span class="mat-h3">Fulano</span>
+      <span class="mat-h2">Nome: </span><span class="mat-h3">{{ user.name }}</span>
     </mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item>
-      <span class="mat-h2">Email: </span><span class="mat-h3">-</span>
+      <span class="mat-h2">Email: </span><span class="mat-h3">{{ user.email }}</span>
     </mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item>
-      <span class="mat-h2">Telefone: </span><span class="mat-h3">-</span>
+      <span class="mat-h2">Telefone: </span><span class="mat-h3">{{ user.phone }}</span>
     </mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item>
-      <span class="mat-h2">Endereço: </span><span class="mat-h3">-</span>
+      <span class="mat-h2">Endereço: </span><span class="mat-h3">{{ user.address?.street }}, {{ user.address?.number }}, {{ user.address?.city }} - {{ user.address?.state }}</span>
     </mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item>
-      <span class="mat-h2">Ativo: </span><span class="mat-h3">-</span>
+      <span class="mat-h2">Ativo: </span><span class="mat-h3">{{ user.active }}</span>
     </mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item>
-      <span class="mat-h2">Função: </span><span class="mat-h3">-</span>
+      <span class="mat-h2">Função: </span><span class="mat-h3">{{ user.role }}</span>
     </mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item>
-      <span class="mat-h2">Data de Cadastro: </span><span class="mat-h3">-</span>
+      <span class="mat-h2">Data de Cadastro: </span><span class="mat-h3">{{ user.registrationDate }}</span>
     </mat-list-item>
     <mat-divider></mat-divider>
   </mat-list>
