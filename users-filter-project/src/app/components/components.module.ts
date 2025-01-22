@@ -4,6 +4,7 @@ import { AngularMaterialModule } from "../angular-material/angular-material.modu
 import { UserDetailsComponent } from "./user-details/user-details.component";
 import { UserFiltersComponent } from "./user-filters/user-filters.component";
 import { UserListComponent } from "./user-list/user-list.component";
+import { PipesModule } from "../pipes/pipes.module";
 
 const declarationsExports = [
   UserDetailsComponent,
@@ -13,7 +14,7 @@ const declarationsExports = [
 
 @NgModule({
   declarations: declarationsExports,
-  imports: [AngularMaterialModule, FormsModule],
+  imports: [AngularMaterialModule, FormsModule, PipesModule],
   exports: declarationsExports,
 })
 export class ComponentsModule {}
