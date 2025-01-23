@@ -16,7 +16,7 @@
     <!-- Status Column -->
     <ng-container matColumnDef="active">
       <th mat-header-cell *matHeaderCellDef> Status </th>
-      <td mat-cell *matCellDef="let element" class="user-list__item" (click)="onUserSelected(element)"> {{element.active}} </td>
+      <td mat-cell *matCellDef="let element" class="user-list__item" (click)="onUserSelected(element)"> {{element.active | status}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
