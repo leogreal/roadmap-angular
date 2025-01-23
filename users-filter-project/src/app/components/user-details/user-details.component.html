@@ -17,7 +17,7 @@
     </mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item>
-      <span class="mat-h2">Endereço: </span><span class="mat-h3">{{ user.address?.street }}, {{ user.address?.number }}, {{ user.address?.city }} - {{ user.address?.state }}</span>
+      <span class="mat-h2">Endereço: </span><span class="mat-h3">{{ user.address | address }}</span>
     </mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item>
