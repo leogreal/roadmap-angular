@@ -1,7 +1,7 @@
 <div class="container">
 <div class="left-container">
   <div class="top-div">
-    <app-user-filters></app-user-filters>
+    <app-user-filters (filterClicked)="onFilterClicked($event)"></app-user-filters>
   </div>
   <div class="main-div">
     <app-user-list [usersList]="usersList" (userSelected)="onUserSelected($event)"></app-user-list>
