@@ -4,10 +4,12 @@
     <app-user-filters></app-user-filters>
   </div>
   <div class="main-div">
-    <app-user-list></app-user-list>
+    <app-user-list (userSelected)="onUserSelected($event)"></app-user-list>
   </div>
 </div>
 <div class="right-container">
-  <app-user-details [user]="selectedUser"></app-user-details>
+  @if(showUserDetails) {
+    <app-user-details [user]="selectedUser"></app-user-details>
+  }
 </div>
 </div>
