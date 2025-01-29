@@ -37,6 +37,12 @@ export class AppComponent implements OnInit{
   filterUsersList(filterOptions: IFilterOptions, usersList: IUser[]): IUser[] {
     const filterByName = (userName: string, filterName: string = '') =>
         filterName ? userName.toLowerCase().includes(filterName.toLowerCase()) : true;
-    return usersList.filter((user) => filterByName(user.name, filterOptions.name));
+
+    const filterByStatus = (userStatus: boolean, filterStatus: boolean | undefined) =>
+        filterStatus === undefined ? true : userStatus === filterStatus;
+    
+    return usersList
+      .filter((user) => filterByName(user.name, filterOptions.name))
+      .filter((user) => filterByStatus(user.active, filterOptions.status));
   }
 }
