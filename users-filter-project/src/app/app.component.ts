@@ -40,9 +40,20 @@ export class AppComponent implements OnInit{
 
     const filterByStatus = (userStatus: boolean, filterStatus: boolean | undefined) =>
         filterStatus === undefined ? true : userStatus === filterStatus;
+
+    const filterByDate = (userRegistrationDate: string, startDate?: Date, endDate?: Date): boolean => {
+      const registrationDate = new Date(userRegistrationDate);
+      if (isNaN(registrationDate.getTime())) return false;
+
+      return (
+        (!startDate || registrationDate >= startDate) &&
+        (!endDate || registrationDate <= endDate)
+      );
+    };
     
     return usersList
       .filter((user) => filterByName(user.name, filterOptions.name))
-      .filter((user) => filterByStatus(user.active, filterOptions.status));
+      .filter((user) => filterByStatus(user.active, filterOptions.status))
+      .filter((user) => filterByDate(user.registrationDate, filterOptions.startDate, filterOptions.endDate));
   }
 }
