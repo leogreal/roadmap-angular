@@ -14,11 +14,15 @@ import { IUser } from './interfaces/user/user.interface';
 })
 export class AppComponent implements OnInit{
   usersList: IUser[] = [];
+  usersListFiltered: IUser[] = [];
   selectedUser: IUser = {} as IUser;
   showUserDetails: boolean = false;
 
   ngOnInit(): void {
-    setTimeout(() => (this.usersList = usersList), 3000);
+    setTimeout(() => {
+      this.usersList = usersList;
+      this.usersListFiltered = usersList;
+    }, 3000);
   }
 
   onUserSelected(selectedUser: IUser): void {
@@ -27,6 +31,12 @@ export class AppComponent implements OnInit{
   }
 
   onFilterClicked(filterOptions: IFilterOptions): void {
+    this.usersListFiltered = this.filterUsersList(filterOptions, this.usersList);
+  }
 
+  filterUsersList(filterOptions: IFilterOptions, usersList: IUser[]): IUser[] {
+    const filterByName = (userName: string, filterName: string = '') =>
+        filterName ? userName.toLowerCase().includes(filterName.toLowerCase()) : true;
+    return usersList.filter((user) => filterByName(user.name, filterOptions.name));
   }
 }
